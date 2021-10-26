@@ -191,3 +191,22 @@
 //   const totalAmount = amountValue;
 //   amount.textContent = totalAmount;
 // });
+
+const container = document.querySelector(".container");
+const colorValue = document.querySelector(".colorValue");
+const bgBtn = document.querySelector(".bgBtn");
+
+const color = ["red", "blue", "#444", "green", "orange"];
+
+bgBtn.addEventListener("click", () => {
+  let randonNumber = getRandonNumber();
+  console.log(randonNumber);
+  container.style.backgroundColor = color[randonNumber];
+  colorValue.textContent = color[randonNumber];
+
+  console.log("click");
+});
+
+const getRandonNumber = () => {
+  return Math.floor(Math.random() * color.length);
+};
