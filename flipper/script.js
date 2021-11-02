@@ -191,3 +191,60 @@
 //   const totalAmount = amountValue;
 //   amount.textContent = totalAmount;
 // });
+
+//Just for 4 colors
+// const container = document.querySelector(".container");
+// const colorValue = document.querySelector(".colorValue");
+// const bgBtn = document.querySelector(".bgBtn");
+
+// const color = ["red", "blue", "#444", "green", "orange"];
+
+// bgBtn.addEventListener("click", () => {
+//   let randonNumber = getRandonNumber();
+//   console.log(randonNumber);
+//   container.style.backgroundColor = color[randonNumber];
+//   colorValue.textContent = color[randonNumber];
+
+//   console.log("click");
+// });
+
+// const getRandonNumber = () => {
+//   return Math.floor(Math.random() * color.length);
+// };
+
+//Hex colors and value
+
+const container = document.querySelector(".container");
+const colorValue = document.querySelector(".colorValue");
+const bgBtn = document.querySelector(".bgBtn");
+
+const hex = [
+  "0",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "9",
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+];
+
+bgBtn.addEventListener("click", () => {
+  let randonNumber = 0;
+  let hexColor = "#";
+  for (let i = 0; i < 6; i++) {
+    hexColor += hex[getRandonNumber()];
+  }
+  container.style.backgroundColor = hexColor;
+  colorValue.textContent = hexColor;
+});
+const getRandonNumber = () => {
+  return Math.floor(Math.random() * hex.length);
+};
